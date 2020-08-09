@@ -1,0 +1,26 @@
+<script>
+  function loadImg(src) {
+    return new Promise((resolve, reject) => {
+      const img = document.createElement('img')
+      img.addEventListener('load', () => {
+        resolve(img)
+      })
+      img.addEventListener('error', () => {
+        reject('图片加载失败')
+      })
+      img.src = src
+    })
+  }
+
+  var src = 'https://www.imooc.com/static/img/index/logo_new.png'
+  var image = loadImg(src)
+  image.then(img => {
+    console.log('img width', img.width)
+    return img
+  }).then(img => {
+    console.log('img height', img.height)
+    return img
+  }).then(img => {
+    document.body.appendChild(img)
+  })
+</script>

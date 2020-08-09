@@ -1,0 +1,11 @@
+<button id="btn">click</button>
+
+<script>
+  const $ = s => document.querySelector(s)
+
+  const button = $('#btn')
+
+  button.addEventListener('click', () => console.log('click1'))
+  button.addEventListener('click', () => console.log('click2'))
+  button.addEventListener('click', () => console.log('click3'))
+</script>
